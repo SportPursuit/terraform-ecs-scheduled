@@ -20,7 +20,7 @@ EOF
 # rendered policies
 # iam_policy for lambda to access Elasticache
 resource "aws_iam_policy" "execution_policy" {
-  name = "${var.name}-execution-policy"
+  name   = "${var.name}-execution-policy"
   policy = var.execution_policy
 }
 
@@ -29,8 +29,3 @@ resource "aws_iam_role_policy_attachment" "execution_policy" {
   policy_arn = aws_iam_policy.execution_policy.arn
 }
 
-//resource "aws_iam_role_policy_attachment" "readonly_ecr" {
-//  role       = aws_iam_role.role.name
-//  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
-//}
-//

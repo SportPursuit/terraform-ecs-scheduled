@@ -8,9 +8,9 @@ resource "aws_ecs_task_definition" "definition" {
   task_role_arn            = aws_iam_role.task_role.arn
 
   tags = {
-    Name      = "${var.name} Definition"
-    Stages    = var.stages
-    Project   = "DataOps"
+    Name    = "${var.name} Definition"
+    Stages  = var.stages
+    Project = "DataOps"
   }
 
   container_definitions = <<DEFINITION
@@ -45,9 +45,9 @@ resource "aws_security_group" "sg" {
   }
 
   tags = {
-    Name      = "${var.name}-sg"
-    Stages    = var.stages
-    Project   = "DataOps"
+    Name    = "${var.name}-sg"
+    Stages  = var.stages
+    Project = "DataOps"
   }
 }
 

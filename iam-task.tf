@@ -20,7 +20,7 @@ EOF
 # rendered policies
 # iam_policy for lambda to access Elasticache
 resource "aws_iam_policy" "task_policy" {
-  name = "${var.name}-task-policy"
+  name   = "${var.name}-task-policy"
   policy = var.task_policy
 }
 

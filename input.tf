@@ -1,37 +1,37 @@
 variable "name" {
-  type = string
+  type        = string
   description = "(Required) Name of the Fargate task"
 }
 
 variable "fargate_cpu" {
-  type = number
-  default = 256
+  type        = number
+  default     = 256
   description = "(Optional) CPU value for the Fargate task"
 }
 
 variable "fargate_memory" {
-  type = number
-  default = 512
+  type        = number
+  default     = 512
   description = "(Optional) Memory value for the Fargate task"
 }
 
 variable "ecs_cluster_id" {
-  type = string
+  type        = string
   description = "Docker image ECR arn"
 }
 
 variable "ecs_image_arn" {
-  type = string
+  type        = string
   description = "Docker image ECR arn"
 }
 
 variable "app_count" {
-  type = number
+  type    = number
   default = 1
 }
 
 variable "schedule" {
-  type = string
+  type        = string
   description = "(Required) CRON schedule expression to trigger the Fargate task"
 }
 
@@ -44,29 +44,29 @@ variable "subnet_ids" {
 }
 
 variable "execution_policy" {
-  type = string
+  type        = string
   description = "(Required) Execution policy JSON"
 }
 
 variable "task_policy" {
-  type = string
+  type        = string
   description = "(Required) Execution policy JSON"
 }
 
 
 variable "logs_retention_days" {
-  type = number
+  type        = number
   description = "(Optional) number of days to retain the logs"
-  default = 30
+  default     = 30
 }
 
 variable "region" {
-  type = string
+  type        = string
   description = "(Optional) AWS Region"
-  default = "eu-west-1"
+  default     = "eu-west-1"
 }
 
 variable "stages" {
-  type = string
+  type        = string
   description = "(Required) Stages tag that corresponds to VPC"
 }
