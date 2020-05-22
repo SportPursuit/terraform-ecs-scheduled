@@ -1,3 +1,7 @@
+#####################################################
+# Fargate task execution role + policy
+#####################################################
+
 resource "aws_iam_role" "execution_role" {
   name               = "${var.name}-iam-role"
   assume_role_policy = <<EOF
@@ -17,8 +21,6 @@ EOF
 
 }
 
-# rendered policies
-# iam_policy for lambda to access Elasticache
 resource "aws_iam_policy" "execution_policy" {
   name   = "${var.name}-execution-policy"
   policy = var.execution_policy

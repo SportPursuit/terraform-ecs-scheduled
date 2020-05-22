@@ -1,3 +1,7 @@
+#####################################################
+# Fargate task task role + policy
+#####################################################
+
 resource "aws_iam_role" "task_role" {
   name               = "${var.name}-task-role"
   assume_role_policy = <<EOF

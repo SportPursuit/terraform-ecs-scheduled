@@ -1,3 +1,7 @@
+#####################################################
+# ECS Task Definition + setup with AWS Logs
+#####################################################
+
 resource "aws_ecs_task_definition" "definition" {
   family                   = "app"
   network_mode             = "awsvpc"
