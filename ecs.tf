@@ -20,7 +20,7 @@ resource "aws_ecs_task_definition" "definition" {
   container_definitions = <<DEFINITION
 [
   {
-    "image": "${var.ecs_image_arn}",
+    "image": "${aws_ecr_repository.repository.repository_url}:latest",
     "name": "app",
     "networkMode": "awsvpc",
     "logConfiguration": {
