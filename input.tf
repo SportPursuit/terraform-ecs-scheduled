@@ -20,11 +20,6 @@ variable "ecs_cluster_id" {
   description = "Docker image ECR arn"
 }
 
-variable "ecs_image_arn" {
-  type        = string
-  description = "Docker image ECR arn"
-}
-
 variable "app_count" {
   type    = number
   default = 1
