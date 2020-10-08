@@ -65,3 +65,9 @@ variable "stages" {
   type        = string
   description = "(Required) Stages tag that corresponds to VPC"
 }
+
+variable "ecr_repo_name" {
+  type = string
+  description = "(Optional)" ecr_repo_name
+  default = ""
+}
