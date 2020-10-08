@@ -68,6 +68,6 @@ variable "stages" {
 
 variable "ecr_repo_name" {
   type = string
-  description = "(Optional)" ecr_repo_name
+  description = "(Optional) Name of the ECR repository. If not set it will mirror name variable" 
   default = ""
 }
