@@ -24,9 +24,8 @@ resource "aws_iam_role" "role" {
 DOC
 }
 
-resource "aws_iam_role_policy" "policy" {
+resource "aws_iam_policy" "schedule_policy" {
   name = "${var.name}-ecs-cluster-policy"
-  role = aws_iam_role.role.id
 
   policy = <<DOC
 {
@@ -46,6 +45,12 @@ resource "aws_iam_role_policy" "policy" {
 }
 DOC
 }
+
+resource "aws_iam_role_policy_attachment" "schedule_policy_attachement" {
+  role       = aws_iam_role.role.name
+  policy_arn = aws_iam_policy.schedule_policy.arn
+}
+
 
 
 resource "aws_cloudwatch_event_target" "ecs_scheduled_task" {
