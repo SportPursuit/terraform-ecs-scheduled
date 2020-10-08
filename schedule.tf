@@ -25,7 +25,7 @@ DOC
 }
 
 resource "aws_iam_policy" "schedule_policy" {
-  name = "${var.name}-ecs-cluster-policy"
+  name = "${var.name}-ecs-schedule-policy"
 
   policy = <<DOC
 {
