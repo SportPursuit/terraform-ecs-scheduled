@@ -3,7 +3,7 @@
 #####################################################
 
 resource "aws_ecs_task_definition" "definition" {
-  family                   = "app"
+  family                   = "${var.name}-app"
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
   cpu                      = var.fargate_cpu
@@ -21,7 +21,7 @@ resource "aws_ecs_task_definition" "definition" {
 [
   {
     "image": "${aws_ecr_repository.repository.repository_url}:latest",
-    "name": "app",
+    "name": "${var.name}-app",
     "networkMode": "awsvpc",
     "logConfiguration": {
         "logDriver": "awslogs",
